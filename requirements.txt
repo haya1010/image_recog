@@ -86,7 +86,8 @@ sklearn==0.0
 soupsieve==2.2.1
 sympy==1.8
 tensorboard==1.15.0
-tensorflow==1.15.0
+# tensorflow==1.15.0
+tensorflow==1.15.3
 tensorflow-estimator==1.15.1
 termcolor==1.1.0
 terminado==0.12.1
