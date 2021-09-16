@@ -107,4 +107,3 @@ zipp==3.5.0
 
 gunicorn==20.0.4
 
-opencv-python
