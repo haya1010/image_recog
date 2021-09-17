@@ -216,9 +216,9 @@ class Recognizer():
     return cos_dic
 
 
-api = Flask(__name__)
+app = Flask(__name__)
 
-@api.route('/register', methods=['POST'])
+@app.route('/register', methods=['POST'])
 def register():
   data = request.get_json()
   print(data)
@@ -229,7 +229,7 @@ def register():
   response = {"status":"登録完了"}
   return make_response(jsonify(response))
 
-@api.route('/compare', methods=['POST'])
+@app.route('/compare', methods=['POST'])
 def compare():
   data = request.get_json()
   print(data)
@@ -240,7 +240,7 @@ def compare():
   return make_response(jsonify(cos_dic))
 
 
-@api.route('/result/<string:Id>', methods=['GET'])
+@app.route('/result/<string:Id>', methods=['GET'])
 def get_result(Id):
     # os.makedirs('images', exist_ok=True)
     # compare_keyword = 'kawatahina'
@@ -263,7 +263,7 @@ def get_result(Id):
     # return make_response(jsonify(tmp))
     return jsonify(tmp)
 
-@api.route('/results', methods=['POST'])
+@app.route('/results', methods=['POST'])
 def get_result_by_post_rq():
     data = request.get_json()
     print(data)
@@ -287,4 +287,4 @@ def get_result_by_post_rq():
     # print(type(data))
 
 if __name__ == '__main__':
-    api.run(debug=True)
+    app.run(debug=True)
